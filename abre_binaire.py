@@ -1,20 +1,5 @@
 from File import * 
 
-
-x = 0
-y = 0
-
-def afficher(x, y,val):
-    #print(x, val)
-    espace = '  '
-    espaceDepart = espace * int(14/y)
-    
-    if x < 0:
-        print(espaceDepart[:x] + val)
-    else:
-        print(espaceDepart + (espace * x) + val)
-
-
 class ArbreBinaire():
     def __init__(self, etiquette = None, sag = None, sad = None):
         self.etiquette = etiquette
@@ -22,39 +7,56 @@ class ArbreBinaire():
         self.sad = sad
         self.v = 0
         
-    def est_vide():
+    def est_vide(self):
         if self.etiquette is None:
             return True
         return False
     
     def hauteur(self):
-        if self.etiquette is None:
+        if self.est_vide():
             return -1
         return 1 + max(self.sag.hauteur(), self.sad.hauteur())
+    
+    def taille(self):
+        if self.est_vide():
+            return 0
+        return 1 + self.sag.taille() + self.sad.taille()
 
-    def parcoursPrefix(self, p=0,y=1):
+    def parcoursPrefixe(self):
         if not self.etiquette is None:
             x = self
-            afficher(p, y,str(x.etiquette))
-            self.sag.parcoursPrefix(p-1,y+1)
-            self.sad.parcoursPrefix(p+1,y+1)
+            print(x.etiquette)
+            self.sag.parcoursPrefixe()
+            self.sad.parcoursPrefixe()
+    
+    def parcoursSuffixe(self):
+        if not self.etiquette is None:
+            x = self
+            self.sag.parcoursSuffixe()
+            self.sad.parcoursSuffixe()
+            print(x.etiquette)
+
+    def parcoursInfixe(self):
+        if not self.etiquette is None:
+            x = self
+            self.sag.parcoursInfixe()
+            print(x.etiquette)
+            self.sad.parcoursInfixe()
             
-            
-    def Trouver(self, el):
+    def trouver(self, el):
         if self.etiquette is None:
             return False
         x = self
-        print(x.etiquette)
         if x.etiquette == el:
             return True
         if el < x.etiquette:
-            return self.sag.Trouver(el)
+            return self.sag.trouver(el)
         else:
-            return self.sad.Trouver(el)
+            return self.sad.trouver(el)
 
-    def parcourLargeur(self):
+    def parcoursLargeur(self):
         filee = File()
-        filee.enfiler(self) #on place la racine dans la file
+        filee.enfiler(self)
         while filee.is_empty() == False:
             x = filee.defiler()
             print(x.etiquette)
@@ -62,24 +64,10 @@ class ArbreBinaire():
                 filee.enfiler(x.sag)
             if not x.sad.etiquette is None: 
                 filee.enfiler(x.sad)
-        
-    def AfficherArbre(self):
-        l = []
-        filee = File()
-        filee.enfiler(self) 
-        while filee.is_empty() == False:
-            x = filee.defiler()
-            l.append(x.etiquette)
-            if not x.sag.etiquette is None: 
-                filee.enfiler(x.sag)
-                l.append('♥')
-            if not x.sad.etiquette is None: 
-                filee.enfiler(x.sad)
-                l.append('♥')
-        for i in range(len(l)):
-            print(l[i])
-        return l
-    
+
+
+
+#creer un abre binaire 
 a = ArbreBinaire(15, ArbreBinaire(), ArbreBinaire())
 a.sag = ArbreBinaire(6, ArbreBinaire(), ArbreBinaire())
 a.sag.sag = ArbreBinaire(3, ArbreBinaire(), ArbreBinaire())
