@@ -77,58 +77,12 @@ def tri_fusion(tab):
 
 
 
-def create_random_liste(longeur):
-    return [randint(-69000,69000) for i in range(longeur)]
-
-def fusion(tab1, tab2):
-    i1 = 0
-    i2 = 0
-    tab_sortie = []
-    while i1 < len(tab1) and i2 < len(tab2):
-        if tab1[i1] < tab2[i2]:
-            tab_sortie.append(tab1[i1])
-            i1 += 1
-        else:
-            tab_sortie.append(tab2[i2])
-            i2 += 1
-    if i1 == len(tab1):
-        for elements in tab2[i2:]: tab_sortie.append(elements)
-    else:
-        for elements in tab1[i1:]: tab_sortie.append(elements)
-    return tab_sortie
-        
-def tri_fusion(tab):
-    n = len(tab)
-    if n < 2:
-        return tab
-    else:
-        return fusion(tri_fusion(tab[0:n//2]), tri_fusion(tab[n//2:]))
-    
-def fusion_min(tab1, tab2):
-    i1 = 0
-    i2 = 0
-    tab_sortie = []
-    print(tab1,tab2)
-    while i1 < len(tab1) and i2 < len(tab2):
-        if tab1[i1] < tab2[i2]:
-            tab_sortie.append(tab1[i1])
-            i1 += 1
-        else:
-            tab_sortie.append(tab2[i2])
-            i2 += 1
-    if i1 == len(tab1):
-        for elements in tab2[i2:]: tab_sortie.append(elements)
-    else:
-        for elements in tab1[i1:]: tab_sortie.append(elements)
-    return tab_sortie
+def fusion_minimum(tab1, tab2):
+    return min(tab1, tab2)
         
 def min_fusion(tab):
     n = len(tab)
     if n < 2:
         return tab
     else:
-        return fusion(tri_fusion(tab[0:n//2]), tri_fusion(tab[n//2:]))
-    
-
-# test_liste = [4,5,47,7,5,7,75,7,54,5,7,85,7,7,5,77,85,54,69]
-
+        return fusion_minimum(min_fusion(tab[0:n//2]), min_fusion(tab[n//2:]))
