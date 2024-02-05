@@ -27,25 +27,25 @@ Cette instrucion permet de définir quelles sont les clé choisit à afficher.
   SELECT * FROM ville;
   ```
 
-- Pour selectionner certaines clés données d'une base de donnée
+- Pour selectionner certaines clés données d'une base de donnée :
   
   ```sql
   SELECT nom, code FROM ville;
   ```
 
-- Pour renomer une clé d'une base de donnée
+- Pour renommer une clé d'une base de donnée :
   
   ```sql
   SELECT nom AS NOM_VILLE FROM ville;
   ```
 
-- Pour éliminer les doublons
+- Pour éliminer les doublons :
   
   ```sql
   SELECT DISTINCT code FROM ville;
   ```
 
-- Pour trier les éléments 
+- Pour trier les éléments :
   
   ```sql
   SELECT code FROM ville ORDER BY code;
@@ -57,19 +57,19 @@ Cette instrucion permet de définir quelles sont les clé choisit à afficher.
   SELECT code FROM ville ORDER BY code DESC;
   ```
 
-## L'instruction 'WHERE'
+## L'instruction "WHERE"
 
-Cette instruction permet de faire un filtrer et de sélectionner des élements uniquement si une condition est validé.
+Cette instruction permet de faire un filtrer et de sélectionner des élements uniquement si une condition est validée.
 
 ```sql
 SELECT * FROM ville WHERE code='59140';
-#Selectionne tous les élements où le code = '59140
+#Selectionne tous les élements où le code = '59140'
 SELECT nom, code FROM ville WHERE code='67340';
 #Selectionne le nom et le code où le code = '59140
 SELECT nom, code FROM ville WHERE code='59140' OR code='59260';
 ```
 
-## L'instruction 'INSERT'
+## L'instruction "INSERT"
 
 Permet d'ajouter des données dans une table.
 
@@ -77,18 +77,18 @@ Permet d'ajouter des données dans une table.
 INSERT INTO ville VALUES ('62000','31','62','Calais','50.291048,2.7772211');
 ```
 
-> ATTENTION : on obtient une erreur lorsque l'on essaye d'ajouter une des données qui sont deja présent.
+> ATTENTION : on obtient une erreur lorsque l'on essaye d'ajouter une des données qui sont déjà présent.
 
-## L'instruction 'UPDATE'
+## L'instruction "UPDATE"
 
-Permet de mettre a jour des données deja présente dans la table.
+Permet de mettre a jour des données déjà présente dans la table.
 
 ```sql
 UPDATE ville SET code='62001' WHERE code='62000';
 #Remplace dans la table ville, le code par 62001, où le code = 62000
 ```
 
-## L'instruction 'DELETE'
+## L'instruction "DELETE"
 
 Permet de supprimer des données présente dans la table.
 
@@ -96,9 +96,9 @@ Permet de supprimer des données présente dans la table.
 DELETE FROM ville WHERE code='62001';
 ```
 
-## Instruction supplémentaire
+## Instructions supplémentaires
 
-> Ces instructions seront sûrement donnée, si elle sont nécessaire à la réalisation de l'exercice lors du BAC. De ce fait, elles ne sont pas très importante mais les connaîtres est toujours un plus.
+> Ces instructions seront sûrement donnée, si elles sont nécessaires à la réalisation de l'exercice lors du BAC. De ce fait, elles ne sont pas très importante mais les connaître est toujours un plus.
 
 - Pour avoir la plus petite ou la plus grande valeur
   
@@ -107,19 +107,19 @@ DELETE FROM ville WHERE code='62001';
   SELECT MAX(code) AS MAX FROM ville;
   ```
 
-- Pour avoir le nombre de ligne du tableau
+- Pour avoir le nombre de ligne du tableau :
   
   ```sql
   SELECT COUNT(*) AS NbLignes FROM ville;
   ```
 
-- Pour avoir la somme
+- Pour avoir la somme des éléments :
   
   ```sql
   SELECT SUM(effectif) AS Somme_effectif FROM ville;
   ```
 
-- Pour avoir la moyenne
+- Pour avoir la moyenne :
 
 - ```sql
   SELECT AVG(effectif) AS moyenne FROM evolution;
