@@ -6,13 +6,14 @@
 
 - Base de donnée relationnelle : VIDE
 
-- Bonne base de donnée : S'il n'y a besoin de faire une seule modification a faire pour changer une valeur dans la base de donnée.
+- Bonne base de donnée : S'il n'y a besoin de faire une seule modification a faire dans une seule table pour changer une valeur dans la toutes les base de donnée (grâce au jointures)
   
   - ex : 2 tables sont présentes : la premiere comporte des livres, et la seconde comporte le nom des auteurs qui ont écrit ces livres.
     
-    Un auteur change de nom, si les tables sont  bien faites, il suffit de changer le nom de l'auteur dans la table de l'auteur et pour tous les livres que l'auteur a écrit le nom se mettra a jour. Si elles sont mal faites, pour chaque livre il faudra  changer le nom de l'auteur, representant un grand nombre de modification.
+    Si un auteur change de nom, et que les tables sont bien faites, il suffit de changer le nom de l'auteur dans la table des auteurs et que pour tous les livres que l'auteur a écrit le nom se mettra a jour.
+    Si elles sont mal faites, pour chaque livre écrit par l'auteur, il faudra changer son nom, representant un grand nombre de modification.
 
-- Pour gerer une base de donnée il faut un logiciel de type SGBD (Systeme de Gestion de Base de Donnée)
+- Pour gerer une base de donnée il faut un logiciel de type SGBD (Systeme de Gestion de Base de Données)
 
 # Les instructions
 
