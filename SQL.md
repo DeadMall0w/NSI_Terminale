@@ -6,7 +6,7 @@
 
 - Base de donnée relationnelle : VIDE
 
-- Bonne base de donnée : Si il y a besoin de ne faire uniquement 1 seule modification a faire pour changer une valeur dans la base de donnée.
+- Bonne base de donnée : S'il y a besoin de ne faire uniquement 1 seule modification a faire pour changer une valeur dans la base de donnée.
   
   - ex : 2 tables sont présentes : la premiere comporte des livres, et la seconde comporte le nom des auteurs qui ont écrit ces livres.
     
