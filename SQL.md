@@ -1,8 +1,8 @@
 # Définition
 
-- Clé primaire : numéros unique qui permet que chaque enregistrement soit unique.
+- Clé primaire : numéro unique qui permet que chaque enregistrement soit unique.
 
-- Clé étrangère : Clé d'un autre tableau pour établir une relation
+- Clé étrangère : Clé primaire d'un autre tableau pour établir une relation
 
 - Base de donnée relationnelle : VIDE
 
