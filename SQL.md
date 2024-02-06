@@ -19,7 +19,7 @@
 
 ## L'instruction 'SELECT'
 
-Cette instrucion permet de définir quelles sont les clé choisit à afficher.
+Cette instruction permet de définir quelles sont les clé choisit à afficher.
 
 - Pour selectionner toutes les données d'une  base de donnée
   
